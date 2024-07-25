@@ -1,7 +1,7 @@
 import 'package:bloc_mvvm_2/config/Routes/Routes_name.dart';
-import 'package:bloc_mvvm_2/config/views/home/home_screen.daart.dart';
-import 'package:bloc_mvvm_2/config/views/login/LoginScreen.dart';
-import 'package:bloc_mvvm_2/config/views/splash/splashScreen.dart';
+import 'package:bloc_mvvm_2/views/home/home_screen.daart.dart';
+import 'package:bloc_mvvm_2/views/login/LoginScreen.dart';
+import 'package:bloc_mvvm_2/views/splash/splashScreen.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
