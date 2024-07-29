@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  const MaterialApp(
       title: 'bloc Mvvm',
-      initialRoute: RoutesName.loginScreen,
+      initialRoute: RoutesName.splashScreen,
       onGenerateRoute: Routes.generateRoute,
     );
   }

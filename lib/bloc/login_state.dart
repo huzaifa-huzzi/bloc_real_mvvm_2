@@ -1,6 +1,25 @@
 part of 'login_bloc.dart';
 
-@immutable
-sealed class LoginState {}
 
-final class LoginInitial extends LoginState {}
+class LoginState extends Equatable {
+  final String email;
+  final String password;
+
+  const LoginState({this.email = '',this.password =''});
+
+  //copywith ftn
+
+   LoginState copywith({String? email,String? password}){
+     return LoginState(
+       email:  email ?? this.email,
+       password: password ?? this.password
+     );
+}
+
+
+  @override
+  List<Object> get props => [email,password];
+
+
+}
+
