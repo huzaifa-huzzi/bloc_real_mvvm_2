@@ -1,3 +1,4 @@
+import 'package:bloc_mvvm_2/Utils/validations.dart';
 import 'package:bloc_mvvm_2/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +23,9 @@ class EmailInputWidget extends StatelessWidget {
            validator: (value){
              if(value!.isEmpty){
                return 'Enter Email';
+             }
+             if(!Validations.emailValidator(value)){
+               return 'Email is not correct';
              }
              return null ;
            },
