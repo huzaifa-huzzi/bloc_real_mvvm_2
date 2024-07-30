@@ -28,14 +28,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       "password": state.password
     };
 
+    // for loading purpose
+    emit(state.copywith(postApiStatus: PostApiStatus.loading));
+
     await loginRepository.loginApi(data).then((value){
         if(value.error.isNotEmpty){
-          print('successful');
-        }else{
-          state.copywith(error: value.error.toString());
-        }
-    }).onError((error,stackTrace){
-      emit(state.copywith(error: error.toString()));
+         emit( state.copywith(error: value.error.toString(),postApiStatus: PostApiStatus.error));
+        }else {
+          emit(state.copywith(postApiStatus: PostApiStatus.success));
+        }}).onError((error,stackTrace){
+      emit(state.copywith(error: error.toString(),postApiStatus: PostApiStatus.error));
     });
 
   }
