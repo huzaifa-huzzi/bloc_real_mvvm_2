@@ -11,10 +11,12 @@ class LoginWidgetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc,LoginState>(
+      listenWhen: (current,previous) => current.postApiStatus != previous.postApiStatus,
       listener: (context,state){
         if(state.postApiStatus == PostApiStatus.error){
           print('issue in it');
         }
+        
         if(state.postApiStatus == PostApiStatus.success){
 
         }
@@ -24,13 +26,13 @@ class LoginWidgetButton extends StatelessWidget {
         }
 
     },child: BlocBuilder<LoginBloc,LoginState>(
-        buildWhen: (current,previous) => false,
+        buildWhen: (current,previous) => current.postApiStatus != previous.postApiStatus,
         builder: (context,state){
           return ElevatedButton(onPressed: (){
             if(formKey.currentState!.validate()){
               context.read<LoginBloc>().add(LoginButton());
             }
-          }, child:const  Text('Login'));
+          }, child:state.postApiStatus == PostApiStatus.loading ?const  CircularProgressIndicator(color: Colors.blue,) :Text('Login'));
         }),
 
     );
