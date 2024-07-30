@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_mvvm_2/Utils/enum.dart';
 import 'package:equatable/equatable.dart';
 
 part 'login_event.dart';

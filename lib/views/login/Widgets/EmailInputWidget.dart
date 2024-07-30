@@ -2,7 +2,6 @@ import 'package:bloc_mvvm_2/Utils/validations.dart';
 import 'package:bloc_mvvm_2/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:http/http.dart';
 
 class EmailInputWidget extends StatelessWidget {
   final FocusNode emailFocusNode;
