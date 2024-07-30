@@ -7,8 +7,10 @@ import 'package:flutter/widgets.dart';
 
 class SplashServices {
 
-  void isLogin(BuildContext context){
-    Timer(const Duration(seconds: 3),() => Navigator.pushAndRemoveUntil(context, RoutesName.loginScreen as Route<Object?>, (route) => false));
+  void isLogin(BuildContext context) {
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushNamed(context, RoutesName.loginScreen);
+    });
   }
 
 

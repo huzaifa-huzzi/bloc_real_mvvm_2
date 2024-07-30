@@ -1,4 +1,5 @@
 import 'package:bloc_mvvm_2/Utils/enum.dart';
+import 'package:bloc_mvvm_2/Utils/flushbar_helper.dart';
 import 'package:bloc_mvvm_2/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,11 +15,11 @@ class LoginWidgetButton extends StatelessWidget {
       listenWhen: (current,previous) => current.postApiStatus != previous.postApiStatus,
       listener: (context,state){
         if(state.postApiStatus == PostApiStatus.error){
-          print('issue in it');
+           FlushBarHelper.flushBarErrorMessage(state.error.toString(), context);
         }
-        
-        if(state.postApiStatus == PostApiStatus.success){
 
+        if(state.postApiStatus == PostApiStatus.success){
+          FlushBarHelper.flushBarErrorMessage('Login Successful', context);
         }
 
         if(state.postApiStatus == PostApiStatus.loading){
