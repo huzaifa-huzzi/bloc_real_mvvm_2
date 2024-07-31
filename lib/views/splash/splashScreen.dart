@@ -1,4 +1,4 @@
-import 'package:bloc_mvvm_2/Services/SplashServices.dart';
+import 'package:bloc_mvvm_2/Services/plash/SplashServices.dart';
 import 'package:flutter/material.dart';
 
 
