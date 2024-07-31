@@ -1,5 +1,6 @@
 import 'package:bloc_mvvm_2/Repository/Auth/login_repository.dart';
 import 'package:bloc_mvvm_2/bloc/login_bloc.dart';
+import 'package:bloc_mvvm_2/main.dart';
 import 'package:bloc_mvvm_2/views/login/Widgets/EmailInputWidget.dart';
 import 'package:bloc_mvvm_2/views/login/Widgets/LoginButton.dart';
 import 'package:bloc_mvvm_2/views/login/Widgets/PasswordInputWidget.dart';
@@ -25,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _loginBlocs = LoginBloc(loginRepository: LoginRepository());
+    _loginBlocs = LoginBloc(loginRepository: getIt());
   }
 
   @override

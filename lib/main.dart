@@ -1,8 +1,14 @@
+import 'package:bloc_mvvm_2/Repository/Auth/login_http_repository.dart';
+import 'package:bloc_mvvm_2/Repository/Auth/login_repository.dart';
 import 'package:bloc_mvvm_2/config/Routes/Routes_Initializing.dart';
 import 'package:bloc_mvvm_2/config/Routes/Routes_name.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+
+GetIt getIt = GetIt.instance;
 
 void main() {
+  serviceLocator();
   runApp(const MyApp());
 }
 
@@ -18,4 +24,8 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: Routes.generateRoute,
     );
   }
+}
+
+void serviceLocator(){
+  getIt.registerLazySingleton<LoginRepository>(() => LoginHttpApiRepository());
 }
