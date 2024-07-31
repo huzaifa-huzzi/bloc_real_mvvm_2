@@ -27,7 +27,11 @@ class _SplashscreenState extends State<Splashscreen> {
       appBar: AppBar(
         title:const  Text('splash screen'),
       ),
-      body: TextButton(onPressed: (){}, child:const  Text('Home')),
+      body: Column(
+        children: [
+
+        ],
+      ),
     );
   }
 }
