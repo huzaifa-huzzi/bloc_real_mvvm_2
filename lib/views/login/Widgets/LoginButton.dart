@@ -1,6 +1,7 @@
 import 'package:bloc_mvvm_2/Utils/enum.dart';
 import 'package:bloc_mvvm_2/Utils/flushbar_helper.dart';
 import 'package:bloc_mvvm_2/bloc/login_bloc.dart';
+import 'package:bloc_mvvm_2/config/Routes/Routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +20,7 @@ class LoginWidgetButton extends StatelessWidget {
         }
 
         if(state.postApiStatus == PostApiStatus.success){
-          FlushBarHelper.flushBarErrorMessage('Login Successful', context);
+          Navigator.pushNamed(context, RoutesName.homeScreen);
         }
 
         if(state.postApiStatus == PostApiStatus.loading){
