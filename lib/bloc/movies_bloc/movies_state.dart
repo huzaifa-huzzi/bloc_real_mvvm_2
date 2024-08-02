@@ -5,7 +5,7 @@ class MoviesState extends Equatable {
 
   final ApiResponse<MoviesModel> moviesList ;
 
-   MoviesState({required this.moviesList,})
+   MoviesState({required this.moviesList,});
 
 
           //copywith functions
