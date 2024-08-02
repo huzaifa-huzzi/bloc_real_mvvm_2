@@ -26,6 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
     moviesBloc = MoviesBloc(moviesRepository: getIt());
   }
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    moviesBloc.close();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,12 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
                return const Center(child: CircularProgressIndicator(),);
             case Status.error:
               if(state.moviesList.message == 'No Internet'){
-                return InternetException(onPress: (){moviesBloc.add(MoviesFetched())});
+                return InternetException(onPress: (){moviesBloc.add(MoviesFetched());});
               }
               return Center(child: Text(state.moviesList.message.toString()),);
             case Status.completed:
               if(state.moviesList.data == null){
-                return Text('No Data Found');
+                return const  Text('No Data Found');
               }
                final movieList = state.moviesList.data!;
                return ListView.builder(
