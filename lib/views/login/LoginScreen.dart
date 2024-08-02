@@ -1,5 +1,4 @@
-import 'package:bloc_mvvm_2/Repository/Auth/login_repository.dart';
-import 'package:bloc_mvvm_2/bloc/login_bloc.dart';
+import 'package:bloc_mvvm_2/bloc/Login_bloc/login_bloc.dart';
 import 'package:bloc_mvvm_2/main.dart';
 import 'package:bloc_mvvm_2/views/login/Widgets/EmailInputWidget.dart';
 import 'package:bloc_mvvm_2/views/login/Widgets/LoginButton.dart';
