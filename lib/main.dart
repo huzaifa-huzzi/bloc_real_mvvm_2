@@ -1,5 +1,7 @@
 import 'package:bloc_mvvm_2/Repository/Auth/login_http_repository.dart';
 import 'package:bloc_mvvm_2/Repository/Auth/login_repository.dart';
+import 'package:bloc_mvvm_2/Repository/movies/movies_http_repository.dart';
+import 'package:bloc_mvvm_2/Repository/movies/movies_repository.dart';
 import 'package:bloc_mvvm_2/config/Routes/Routes_Initializing.dart';
 import 'package:bloc_mvvm_2/config/Routes/Routes_name.dart';
 import 'package:flutter/material.dart';
@@ -28,4 +30,5 @@ class MyApp extends StatelessWidget {
 
 void serviceLocator(){
   getIt.registerLazySingleton<LoginRepository>(() => LoginHttpApiRepository());
+  getIt.registerLazySingleton<MoviesRepository>(() => MoviesHttpApiRepository());
 }
